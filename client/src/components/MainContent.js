@@ -7,12 +7,11 @@ import {
   Typography,
   CardActionArea,
 } from "@mui/material";
-// import WifiTetheringIcon from "@mui/icons-material/WifiTethering";
 import { Link } from "react-router-dom";
 import { getTypes } from "../admin/services/typeService";
-// import Broadcast_icon from "./Broadcast_icon.png";
-// import movies1 from './movies.png'
-// import channel from './channel.png'
+// import Broadcast_icon from "../assets/Broadcast_icon.png";
+// import movies1 from '../assets/movies.png'
+// import channel from '../assets/channel.png'
 
 
 

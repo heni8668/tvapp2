@@ -11,7 +11,7 @@ import {
 import { AccountCircle, Lock } from "@mui/icons-material";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import TreeOutlinedIcon from "@mui/icons-material/TreeOutlined";
+import { GiBurningTree } from "react-icons/gi";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -28,8 +28,9 @@ function LoginPage() {
       );
       // console.log(response.data);
       //  the backend returns a token
-      navigate("/");
       localStorage.setItem("token", response.data.token);
+      navigate("/");
+      window.location.reload();
     } catch (err) {
       setError("Invalid credentials");
     }
@@ -50,10 +51,10 @@ function LoginPage() {
         }}
       >
         <Typography variant="h3" component="div" sx={{ color: "white", mb: 2 }}>
-          <TreeOutlinedIcon />
+          <GiBurningTree />
         </Typography>
-        <Typography variant="h5" component="div" sx={{ color: "white" }}>
-          Welcome to my Site
+        <Typography variant="h1" component="div" sx={{ color: "white" }}>
+          T-Movie
         </Typography>
       </Grid>
       <Grid

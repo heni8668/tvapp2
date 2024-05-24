@@ -27,10 +27,10 @@ function TopBar() {
         <IconButton>
           <SearchIcon sx={{ color: "white" }} />
         </IconButton>
-        <MuiLink component={Link} to="/login" sx={{ textDecoration: "none" }}>
           <IconButton>
             <AccountCircle sx={{ color: "white" }} />
           </IconButton>
+        <MuiLink component={Link} to="/login" sx={{ textDecoration: "none" }}>
           <Button color="inherit" onClick={handleLogout}>
             Logout
           </Button>

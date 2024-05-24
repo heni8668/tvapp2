@@ -1,11 +1,11 @@
 import React from 'react'
 // import {  Link } from "react-router-dom";
 import { Box, CssBaseline, Container } from "@mui/material";
-import SidebarLeft from "./SidebarLeft";
-import SidebarRight from "./SidebarRight";
-import TopBar from "./TopBar";
-import Banner from "./Banner";
-import MainContent from "./MainContent";
+import SidebarLeft from "../components/SidebarLeft";
+import SidebarRight from "../components/SidebarRight";
+import TopBar from "../components/TopBar";
+import Banner from "../components/Banner";
+import MainContent from "../components/MainContent";
 import { useLocation } from "react-router-dom";
 // import DetailPage from './DetailPage';
 

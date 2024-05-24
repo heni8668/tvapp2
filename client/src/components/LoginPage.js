@@ -28,8 +28,8 @@ function LoginPage() {
       );
       // console.log(response.data);
       //  the backend returns a token
-      localStorage.setItem("token", response.data.token);
       navigate("/");
+      localStorage.setItem("token", response.data.token);
     } catch (err) {
       setError("Invalid credentials");
     }

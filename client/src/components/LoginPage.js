@@ -26,7 +26,7 @@ function LoginPage() {
         "https://tvapp2-2.onrender.com/api/users/login",
         { email, password }
       );
-      console.log(response.data);
+      // console.log(response.data);
       //  the backend returns a token
       localStorage.setItem("token", response.data.token);
       navigate("/");

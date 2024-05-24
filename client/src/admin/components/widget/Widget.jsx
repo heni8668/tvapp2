@@ -8,7 +8,7 @@ import MonetizationOnOutlined from "@mui/icons-material/MonetizationOnOutlined";
 const Widget = ({ type }) => {
   let data;
 
-// Temporary
+// Temporary data
 const amount = 100;
 const diff = 20;
 
@@ -69,7 +69,7 @@ switch (type) {
       <div className="left">
         <span className="title">{data.title}</span>
         <span className="counter">
-          {data.isMoney && "ZMK"} {amount}
+          {data.isMoney } {amount}
         </span>
         <span className="link">{data.link}</span>
       </div>

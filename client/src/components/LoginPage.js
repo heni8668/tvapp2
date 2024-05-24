@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { AccountCircle, Lock } from "@mui/icons-material";
 import { Link, useNavigate } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -22,18 +22,17 @@ function LoginPage() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/users/login",
+        "https://tvapp2-2.onrender.com/api/users/login",
         { email, password }
       );
       console.log(response.data);
-      // Assume the backend returns a token
+      //  the backend returns a token
       localStorage.setItem("token", response.data.token);
       navigate("/");
     } catch (err) {
       setError("Invalid credentials");
     }
   };
-
 
   return (
     <Grid container sx={{ height: "100vh" }}>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState }  from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import {
@@ -63,7 +63,7 @@ function DetailPage() {
   //   fetchMoviesByTypeId();
   //   checkStatus();
   // }, [id]);
-  
+
   // const fetchMoviesByTypeId = async () => {
   //   const data = await getMovies();
   //   setMovie(data);
@@ -88,11 +88,10 @@ function DetailPage() {
     setIsWatchLater(watchLaterResponse.data.isWatchLater);
   };
 
-
   const handleAddToFavorites = async () => {
     const token = localStorage.getItem("token");
     const userId = token ? JSON.parse(atob(token.split(".")[1])).id : null;
-    await axios.post("http://localhost:5000/api/users/favorites", {
+    await axios.post("https://tvapp2-2.onrender.com/api/users/favorites", {
       userId,
       movieId: id,
     });
@@ -102,16 +101,19 @@ function DetailPage() {
   const handleRemoveFromFavorites = async () => {
     const token = localStorage.getItem("token");
     const userId = token ? JSON.parse(atob(token.split(".")[1])).id : null;
-    await axios.delete("http://localhost:5000/api/users/favorites/remove", {
-      data: { userId, movieId: id },
-    });
+    await axios.delete(
+      "https://tvapp2-2.onrender.com/api/users/favorites/remove",
+      {
+        data: { userId, movieId: id },
+      }
+    );
     setIsFavorite(false);
   };
 
   const handleAddToWatchLater = async () => {
     const token = localStorage.getItem("token");
     const userId = token ? JSON.parse(atob(token.split(".")[1])).id : null;
-    await axios.post("http://localhost:5000/api/users/watch-later", {
+    await axios.post("https://tvapp2-2.onrender.com/api/users/watch-later", {
       userId,
       movieId: id,
     });
@@ -121,9 +123,12 @@ function DetailPage() {
   const handleRemoveFromWatchLater = async () => {
     const token = localStorage.getItem("token");
     const userId = token ? JSON.parse(atob(token.split(".")[1])).id : null;
-    await axios.delete("http://localhost:5000/api/users/watch-later/remove", {
-      data: { userId, movieId: id },
-    });
+    await axios.delete(
+      "https://tvapp2-2.onrender.com/api/users/watch-later/remove",
+      {
+        data: { userId, movieId: id },
+      }
+    );
     setIsWatchLater(false);
   };
 

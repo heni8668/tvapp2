@@ -11,10 +11,10 @@ import Channel from "./admin/pages/channel/Channel";
 import Types from "./admin/pages/types/Types";
 import Movies from "./admin/pages/programs/Movies";
 import './app.css'
-import Front from "./components/Front";
-import DetailPage from "./components/DetailPage";
-import LoginPage from "./components/LoginPage";
-import RegisterPage from "./components/RegisterPage";
+import Front from "./pages/Front";
+import DetailPage from "./pages/DetailPage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { useEffect, useState } from "react";
 
@@ -40,38 +40,7 @@ function App() {
   
   return (
     <div>
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/">
-           
-            <Route
-              style={{ backgroundColor: "#11323e" }}
-              path=""
-              element={<Front />}
-              
-            />
-            <Route path="/details/:id" element={<DetailPage />} />
-            <Route path="/login" element={<LoginPage />} exact />
-            <Route path="/register" element={<RegisterPage />} exact />
-          </Route>
-
-          <Route path="admin">
-            <Route path="/admin" element={<Home />}  />
-          </Route>
-          <Route path="category">
-            <Route path="/category" element={<Category />} />
-          </Route>
-          <Route path="channels">
-            <Route path="/channels" element={<Channel />} />
-          </Route>
-          <Route path="types">
-            <Route path="/types" element={<Types />} />
-          </Route>
-          <Route path="programs">
-            <Route path="/programs" element={<Movies />} />
-          </Route>
-        </Routes>
-      </BrowserRouter> */}
+      
       <Router>
        
         <Routes>
@@ -80,7 +49,7 @@ function App() {
           <Route path="/register" element={<RegisterPage />}  />
           <Route path="/logout" element={<Navigate to="/login" />} />
           <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
-          <Route path="/" element={<Front />} />
+          <Route path="/" element={<Front />} index/>
             <Route path="/details/:id" element={<DetailPage />} />
             <Route path="/admin" element={<Home />} />
             <Route path="/category" element={<Category />} />

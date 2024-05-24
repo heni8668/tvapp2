@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+Television Networks App
+This project is a Television Networks App built using React, Node.js, Express, and PostgreSQL. The application allows users to manage movies, channels, categories, and types. Users can also save movies to a "Watch Later" list and mark movies as favorites. The project includes an admin panel for CRUD operations and a dashboard with charts for data visualization.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+Admin Panel: Manage movies, channels, categories, and types.
+CRUD Operations: Add, edit, delete movies, channels, categories, and types.
+User Features: Save movies to watch later and mark as favorites.
+Responsive Design: Optimized for both desktop and mobile screens.
+Real-time Updates: Data updated live using Socket.io.
+Charts and Analytics: Dashboard includes user count, program count, channel count, and charts for program categories and types.
 
-## Available Scripts
+Technologies Used
+Frontend: React, Material UI
+Backend: Node.js, Express
+Database: PostgreSQL
+ORM: Prisma
+Validation: Zod
+Charts: Victory Chart / Recharts
+Real-time Updates: Socket.io
 
-In the project directory, you can run:
+Prerequisites
+Node.js (v14.x or later)
+PostgreSQL
 
-### `npm start`
+Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+.
+├── client
+│ ├── public
+│ ├── src
+├── admin
+│ │ │ ├── component files
+│ │ │ ├── context files
+│ │ │ ├── pages files
+│ │ │ ├── services files
+│ │ │  
+│ │ ├── assets
+│ │ │  
+│ │ ├── components
+│ │ │ ├── Banner.js
+│ │ │ ├── maincontent.js
+│ │ │ ├── protectedRoute.js
+│ │ │ ├── sidebarleft.js
+│ │ │ └── sidebarRight.js
+│ │ │ └── TopBar.js
+│ │ ├── services
+│ │ │ ├── detailPage.js
+│ │ │ ├── front.js
+│ │ │ ├── Login.js
+│ │ │ └── register.js
+│ │ ├── App.js
+│ │ ├── index.js
+│ │ └── ...
+├── server
+│ ├── controllers
+│ │ ├── categoryController.js
+│ │ ├── channelController.js
+│ │ ├── movieController.js
+│ │ ├── typeController.js
+│ │ ├── userController.js
+│ ├── middleware
+│ │ ├── client.js
+│ │  
+│ ├── prisma
+│ │ ├── client.js
+│ │ └── schema.prisma
+│ │ └── seed.js
+│ ├── routes
+│ │ ├── categoryRoutes.js
+│ │ ├── channelRoutes.js
+│ │ ├── movieRoutes.js
+│ │ ├── typeRoutes.js
+│ │ └── userRoutes.js
+│ ├── utils
+│ │ ├── validation.js
+│ ├── .env
+│ ├── server.js
+│ └── ...
+├── package.json
+└── README.md
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+API Endpoints
+Movies
+GET /api/movies/get-movie - Get all movies
+POST /api/movies/add-movie - Create a new movie
+PUT /api/movies/update-movie:id - Update a movie
+DELETE /api/movies/delete-movie/:id - Delete a movie
+Channels
+GET /api/channels/get-channel - Get all channels
+POST /api/channels/add-channel - Create a new channel
+PUT /api/channels/update-channel/:id - Update a channel
+DELETE /api/channels/delete-channel/:id - Delete a channel
+Categories
+GET /api/categories/get-category - Get all categories
+POST /api/categories/create-category - Create a new category
+PUT /api/categories/update-category/:id - Update a category
+DELETE /api/categories/delete-category:id - Delete a category
+Types
+GET /api/types/get-type - Get all types
+POST /api/types/add-type - Create a new type
+PUT /api/types/update-type/:id - Update a type
+DELETE /api/types/delete-type/:id - Delete a type
+User
+POST /api/users/watch-later - Add to watch later list
+POST /api/users/favorites - Add to favorites list
+DELETE /api/users/watch-later - Remove from watch later list
+DELETE /api/users/favorites - Remove from favorites list

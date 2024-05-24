@@ -11,6 +11,7 @@ import {
 import { AccountCircle, Lock } from "@mui/icons-material";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import TreeOutlinedIcon from "@mui/icons-material/TreeOutlined";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -49,7 +50,7 @@ function LoginPage() {
         }}
       >
         <Typography variant="h3" component="div" sx={{ color: "white", mb: 2 }}>
-          Logo
+          <TreeOutlinedIcon />
         </Typography>
         <Typography variant="h5" component="div" sx={{ color: "white" }}>
           Welcome to my Site
